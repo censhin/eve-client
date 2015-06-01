@@ -5,8 +5,6 @@ import (
     "fmt"
     "log"
     "net/http"
-
-    "github.com/censhin/eve-poll/config"
 )
 
 type Client struct {
@@ -15,12 +13,11 @@ type Client struct {
     VCode   string
 }
 
-func NewClient() *Client {
+func NewClient(baseUrl, keyId, vCode) *Client {
     client := new(Client)
-    conf := config.GetConfig()
-    client.BaseUrl = conf.BaseUrl
-    client.KeyId = conf.KeyId
-    client.VCode = conf.VCode
+    client.BaseUrl = baseUrl
+    client.KeyId = keyId
+    client.VCode = vCode
 
     return client
 }
