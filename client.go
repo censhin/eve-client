@@ -13,7 +13,7 @@ type Client struct {
     VCode   string
 }
 
-func NewClient(baseUrl, keyId, vCode) *Client {
+func NewClient(baseUrl string, keyId string, vCode string) *Client {
     client := new(Client)
     client.BaseUrl = baseUrl
     client.KeyId = keyId
